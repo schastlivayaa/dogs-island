@@ -1,11 +1,14 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  
+    <DefaultLayout />
 </template>
 
-<style scoped>
+<script>
+import DefaultLayout from '@/layouts/DefaultLayout.vue';
 
-</style>
+export default {
+    name: 'App',
+    components: {
+      DefaultLayout
+    }
+};
+</script>
