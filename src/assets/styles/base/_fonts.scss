@@ -1,0 +1,37 @@
+@font-face {
+  font-family: 'Bebas Neue Cyrillic';
+  src: url('@/assets/external_fonts/BebasNeue.ttf') format('truetype');
+}
+
+h1 {
+  font-family: 'Bebas Neue Cyrillic';
+  font-weight: 400;
+  font-size: 115px;
+}
+
+h2 {
+  font-family: 'Bebas Neue Cyrillic';
+  font-weight: 400;
+  font-size: 48px;
+}
+
+h3 {
+  font-family: 'Bebas Neue Cyrillic';
+  font-weight: 400;
+  font-size: 36px;
+}
+
+.paragraph {
+  font-weight: 400;
+  font-size: 32px;
+}
+
+.caption {
+  font-weight: 400;
+  font-size: 24px;
+}
+
+.caption-small {
+  font-weight: 400;
+  font-size: 20px;
+}
