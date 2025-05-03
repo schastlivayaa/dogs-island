@@ -1,0 +1,57 @@
+@use "../abstracts/constants" as *;
+
+// указываем box-sizing
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// убираем внутренние отступы
+* {
+  padding: 0px;
+  margin: 0px;
+  border: none;
+}
+
+// удаляем стандартную стилизацию ссылок
+a, a:link, a:visited, a:hover  {
+  text-decoration: none;
+}
+
+// удаляем стандартную стилизацию для списков с классами
+ul[class],
+ol[class] {
+  padding: 0;
+  list-style: none;
+}
+
+// настройки по-умолчанию для body
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+}
+
+// упрощаем работу с изображениями
+img {
+  max-width: 100%;
+  display: block;
+}
+
+// наследуем шрифты для инпутов и кнопок
+input, button, textarea, select {
+  font: inherit;
+}
+
+// настройки по-умолчанию для кнопок
+button {
+  background: none;
+  cursor: pointer;
+  border: none;
+}
+
+// визуальная индикация для пользователей клавиатуры
+:focus {
+  outline: 2px solid $color-primary;
+  outline-offset: 2px;
+}

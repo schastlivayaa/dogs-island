@@ -1,0 +1,12 @@
+@use "../abstracts/constants" as *;
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('@/assets/external_fonts/Roboto.ttf') format('truetype');
+  }
+
+body {
+    background-color: $color-light;
+    color: $color-primary;
+    font-family: Roboto, sans-serif;
+}
