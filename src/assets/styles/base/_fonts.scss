@@ -6,32 +6,37 @@
 h1 {
   font-family: 'Bebas Neue Cyrillic';
   font-weight: 400;
-  font-size: 115px;
+  font-size: 11.5rem;
 }
 
 h2 {
   font-family: 'Bebas Neue Cyrillic';
   font-weight: 400;
-  font-size: 48px;
+  font-size: 4.8rem;
 }
 
 h3 {
   font-family: 'Bebas Neue Cyrillic';
   font-weight: 400;
-  font-size: 36px;
+  font-size: 3.6rem;
 }
 
 .paragraph {
-  font-weight: 400;
-  font-size: 32px;
+  font-weight: 300;
+  font-size: 3.2rem;
 }
 
 .caption {
   font-weight: 400;
-  font-size: 24px;
+  font-size: 2.4rem;
 }
 
 .caption-small {
-  font-weight: 400;
-  font-size: 20px;
+  font-weight: 300;
+  font-size: 2rem;
+}
+
+.ultra-small {
+  font-weight: 300;
+  font-size: 1rem;
 }
