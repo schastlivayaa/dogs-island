@@ -8,5 +8,21 @@
 body {
     background-color: $color-light;
     color: $color-primary;
-    font-family: Roboto, sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+input {
+  width: 75%;
+  max-width: 1360px;
+  padding: 10px 5px;
+}
+
+.btn {
+  max-width: 165px;
+  color: $color-primary;
+  padding: 5px;
+}
+
+.btn_bordered {
+  border: 3px solid $color-additional;
 }
