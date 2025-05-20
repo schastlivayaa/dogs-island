@@ -14,14 +14,18 @@
   border: none;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 // удаляем стандартную стилизацию ссылок
 a, a:link, a:visited, a:hover  {
   text-decoration: none;
+  color: inherit;
 }
 
 // удаляем стандартную стилизацию для списков с классами
-ul[class],
-ol[class] {
+ul, ol {
   padding: 0;
   list-style: none;
 }
@@ -51,7 +55,7 @@ button {
 }
 
 // визуальная индикация для пользователей клавиатуры
-:focus {
-  outline: 2px solid $color-primary;
-  outline-offset: 2px;
-}
+// :focus {
+//   outline: 2px solid $color-primary;
+//   outline-offset: 2px;
+// }
