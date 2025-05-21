@@ -131,11 +131,12 @@ function toggleMobileMenu() {
 
 .header {
     &__content {
-        padding: 1rem 12rem;
+        padding: 0 12rem 3rem;
         max-width: 1920px;
         width: 100%;
         margin: 0 auto;
         position: relative;
+        z-index: 1000;
 
         @media (max-width: 790px) {
             padding: 1rem;
@@ -207,7 +208,7 @@ function toggleMobileMenu() {
     &__menu {
         display: flex;
         justify-content: space-between;
-        padding-top: 3rem;
+        padding-top: 2rem;
 
         // @media (max-width: 790px) {
         //     display: none;
@@ -276,6 +277,7 @@ function toggleMobileMenu() {
 
         &-item {
             position: relative;
+            font-weight: 300;
         }
     }
 
