@@ -1,14 +1,16 @@
 <template>
-  <RouterLink :to="link" class="article-card">
+  <RouterLink 
+    :to="{ name: 'ArticleDetail', params: { id: article.id } }" 
+    class="article-card">
     <img
-      v-if="image"
-      :src="image"
-      :alt="title"
+      v-if="article.image"
+      :src="article.image"
+      :alt="article.title"
       class="article-card__image"
     />
     <div class="article-card__content">
-      <h2 class="article-card__title">{{ title }}</h2>
-      <p class="article-card__desc paragraph">{{ desc }}</p>
+      <h2 class="article-card__title">{{ article.title }}</h2>
+      <p class="article-card__desc paragraph">{{ article.desc }}</p>
     </div>
   </RouterLink>
 </template>
@@ -17,11 +19,10 @@
 import { RouterLink } from 'vue-router'
 
 const props = defineProps({
-  id: [String, Number],
-  title: String,
-  desc: String,
-  image: String,
-  link: String
+  article: {
+    type: Object,
+    required: true
+  }
 })
 </script>
 

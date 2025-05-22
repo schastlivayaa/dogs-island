@@ -2,12 +2,9 @@
   <section class="articles">
     <div class="articles__grid">
         <ArticleCard
-        v-for="art in articles"
-        :key="art.id"
-        :title="art.title"
-        :desc="art.desc"
-        :image="art.image"
-        :link="art.link"
+          v-for="art in articles"
+          :key="art.id"
+          :article="art"
       />
     </div>
 
