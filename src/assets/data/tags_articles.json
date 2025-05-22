@@ -1,0 +1,13 @@
+[
+  { "title": "Начинающим",                                "slug": "beginner" },
+  { "title": "Породы собак",                              "slug": "breeds" },
+  { "title": "Содержание, уход, кормление, здоровье",      "slug": "care" },
+  { "title": "Воспитание, дрессировка, спорт, отдых",      "slug": "training" },
+  { "title": "Собачьи профессии",                         "slug": "professions" },
+  { "title": "Выставки и разведение",                      "slug": "exhibitions" },
+  { "title": "Проблемы, приюты, конфликты",                "slug": "problems" },
+  { "title": "Истории о собаках и людях",                  "slug": "stories" },
+  { "title": "Социальные проекты",                        "slug": "projects" },
+  { "title": "Собаки в истории",                          "slug": "history" },
+  { "title": "Рассказы, рисунки, творчество",              "slug": "art" }
+]
