@@ -2,7 +2,7 @@
   <section class="articles">
     <div class="articles__grid">
         <ArticleCard
-        v-for="art in articlesStore.paged"
+        v-for="art in articles"
         :key="art.id"
         :title="art.title"
         :desc="art.desc"
@@ -11,8 +11,8 @@
       />
     </div>
 
-    <div class="articles__load-more" v-if="articlesStore.hasMore">
-      <button class="btn_colored paragraph" @click="articlesStore.loadMore">
+    <div class="articles__load-more" v-if="hasMore">
+      <button class="btn_colored paragraph" @click="onLoadMore">
         Загрузить еще
       </button>
     </div>
@@ -20,15 +20,13 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue'
-import { useArticlesStore } from '@/stores/articlesStore'
 import ArticleCard from '@/components/ArticleCard.vue'
 
-const articlesStore = useArticlesStore()
-
-onMounted(async () => {
-  await articlesStore.init()
-})
+defineProps({
+  articles: { type: Array, required: true },
+  onLoadMore: { type: Function, default: null },
+  hasMore: { type: Boolean, default: false },
+});
 </script>
 
 <style scoped lang="scss">
