@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
-// Импортируем компоненты-страницы
 import HomePage from '@/pages/HomePage.vue';
 import ArticlesPage from '@/pages/ArticlesPage.vue';
 import EventsPage from '@/pages/EventsPage.vue';
@@ -9,6 +8,9 @@ import EducationPage from '@/pages/EducationPage.vue';
 import CoopPage from '@/pages/CoopPage.vue';
 import AboutPage from '@/pages/AboutPage.vue';
 import ContactsPage from '@/pages/ContactsPage.vue';
+
+import ArticleDetails from '@/pages/ArticleDetails.vue';
+import AuthorArticles from '@/pages/AuthorArticles.vue';
 
 const routes = [
   {
@@ -22,9 +24,26 @@ const routes = [
     component: ArticlesPage
   },
   {
+    path: '/articles/:id',
+    name: 'ArticleDetail',
+    component: ArticleDetails,
+    props: true
+  },
+  {
     path: '/events',
     name: 'Events',
     component: EventsPage
+  },
+  {
+    path: '/events/:id',
+    name: 'ArticleDetail',
+    component: ArticleDetails,
+    props: true
+  },
+  {
+    path: '/author/:author',
+    name: 'AuthorArticles',
+    component: AuthorArticles
   },
   {
     path: '/journal',
