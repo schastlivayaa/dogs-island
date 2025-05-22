@@ -10,7 +10,7 @@ import AboutPage from '@/pages/AboutPage.vue';
 import ContactsPage from '@/pages/ContactsPage.vue';
 
 import ArticleDetails from '@/pages/ArticleDetails.vue';
-import AuthorArticles from '@/pages/AuthorArticles.vue';
+import AuthorPage from '@/pages/AuthorPage.vue';
 
 const routes = [
   {
@@ -35,15 +35,10 @@ const routes = [
     component: EventsPage
   },
   {
-    path: '/events/:id',
-    name: 'ArticleDetail',
-    component: ArticleDetails,
-    props: true
-  },
-  {
     path: '/author/:author',
-    name: 'AuthorArticles',
-    component: AuthorArticles
+    name: 'AuthorPage',
+    component: AuthorPage,
+    props: true
   },
   {
     path: '/journal',
