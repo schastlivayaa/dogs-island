@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 
 const MENU = [
     { title: 'Статьи', path: '/articles', children: [
-        { title: 'Начинающим', path: '/articles/beginner' },
+        { title: 'Начинающему собаководу', path: '/articles/beginner' },
         { title: 'Породы собак', path: '/articles/breeds' },
         { title: 'Содержание, уход, кормление, здоровье', path: '/articles/care' },
         { title: 'Воспитание, дрессировка, спорт, отдых', path: '/articles/training' },
