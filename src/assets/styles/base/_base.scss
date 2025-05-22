@@ -45,3 +45,14 @@ body {
   background: $color-primary;
   color: $color-light;
 }
+
+.filter__btn {
+  border: 1px $color-dark solid;
+  color: $color-dark;
+
+  &.active {
+    background-color: $color-primary;
+    color: $color-light;
+    border-color: $color-primary;
+  }
+}
