@@ -38,13 +38,9 @@ function toggle(slug) {
 @use '@/assets/styles/abstracts/constants' as *;
 
 .filter {
-  &__container {
+  &__list {
     padding: 2rem 20rem;
     text-align: center;
-  }
-
-  &__list {
-    padding: 2rem;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
