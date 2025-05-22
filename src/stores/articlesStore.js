@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 
 export const useArticlesStore = defineStore('articles', {
   state: () => ({
-    all: [],      // после fetch сюда попадут все статьи
+    all: [],
     page: 1,
     perPage: 12
   }),
@@ -32,8 +32,5 @@ export const useArticlesStore = defineStore('articles', {
         this.page++
       }
     },
-    reset() {
-      this.page = 1
-    }
   }
 })
