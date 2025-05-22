@@ -26,7 +26,7 @@
                 <div class="article__creators">
                     <RouterLink
                       v-if="article.author"
-                      :to="{ name: 'AuthorArticles', params: { author: article.author.slug } }"
+                      :to="{ name: 'AuthorPage', params: { author: article.author.slug } }"
                       class="article__author"
                     >
                         Автор: {{ article.author.name }},
