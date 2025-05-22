@@ -1,0 +1,5 @@
+[
+  { "title": "Текущие",   "slug": "current" },
+  { "title": "Будущие",   "slug": "future" },
+  { "title": "Прошедшие", "slug": "past" }
+]
