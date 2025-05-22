@@ -1,20 +1,13 @@
 <template>
-  <div class="filter__container">
-    <h2 class="filter__title">Статьи</h2>
-    <!-- Блок фильтров -->
-    <div class="filter__tags">
-      <button
-        v-for="t in tags"
-        :key="t.slug"
-        :class="['filter__btn btn caption-small', { active: t.slug === selectedTag }]"
-        @click="selectTag(t.slug)"
-      >
-        {{ t.title }}
-      </button>
-    </div>
+  <div class="page__filter">
+    <h2 class="page__title">Статьи</h2>
+
+    <TagsFilter
+      :tags="tags"
+      v-model="selectedTag"
+    />
   </div>
 
-  <!-- Список карточек -->
   <ArticleList
     :articles="pagedArticles"
     :hasMore="hasMore"
@@ -24,6 +17,7 @@
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
+import TagsFilter from '@/components/TagFilter.vue'
 import ArticleList from '@/components/ArticleList.vue'
 import tags from '@/assets/data/tags_articles.json'
 import allArts from '@/assets/data/articles.json'
@@ -70,24 +64,8 @@ function selectTag(slug) {
 <style scoped lang="scss">
 @use '@/assets/styles/abstracts/constants' as *;
 
-.filter {
-  &__container {
-    padding: 4rem 20rem;
-    text-align: center;
-  }
-
-  &__title {
-    color: $color-dark;
-  }
-
-  &__tags {
-    padding: 2rem;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-  }
+.page__filter {
+  background-color: $color-medium;
+  padding-top: 4rem;
 }
-
 </style>
