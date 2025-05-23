@@ -34,16 +34,30 @@ body {
 .btn {
   color: $color-primary;
   padding: 0.5rem;
+  transition: all .2s ease;
 }
 
 .btn_bordered {
   border: 3px solid $color-additional;
+
+  &:hover {
+    background-color: $color-additional;
+  }
 }
 
 .btn_colored {
   padding: 1rem 2rem;
   background: $color-primary;
   color: $color-light;
+}
+
+.btn_bold {
+  font-weight: 700;
+  border: 2px solid transparent;
+
+  &:hover {
+    border: 2px solid $color-primary;
+  }
 }
 
 .filter__btn {
