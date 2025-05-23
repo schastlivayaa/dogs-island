@@ -1,29 +1,29 @@
 <template>
   <div class="contacts">
-    <div class="contact">
-      <div class="contact__title">контакты</div>
-      <div class="contact__text">А также элементы политического процесса формируют глобальную экономическую сеть и при
+    <div class="contact" id="contacts">
+      <h2 class="contact__title">контакты</h2>
+      <div class="contact__text paragraph">А также элементы политического процесса формируют глобальную экономическую сеть и при
         этом — описаны максимально подробно. Таким образом, существующая теория позволяет выполнить важные задания по
         разработке экспериментов, поражающих по своей масштабности и грандиозности. Кстати, тщательные исследования
         конкурентов неоднозначны и будут подвергнуты целой серии независимых исследований. Господа, убеждённость
         некоторых оппонентов позволяет
       </div>
     </div>
-    <div class="media">
-      <div class="media__title">Мы в социальных сетях</div>
+    <div class="media" id="socials">
+      <h2 class="media__title">Мы в социальных сетях</h2>
       <div class="media__links">
         <div class="card" v-for="social in socialMedia" :key="social.id">
           <img class="card__img" :src="social.src" alt="socialMediaImg">
-          <div class="card__text">{{ social.description }}</div>
+          <div class="card__text paragraph">{{ social.description }}</div>
         </div>
       </div>
     </div>
   </div>
-  <div class="latter">
-    <div class="latter__title">РАССЫЛКА</div>
-    <div class="latter__text">БУДЬТЕ В КУРСЕ НОВОСТЕЙ ИИ НОВЫХ ВЫПУСКОВ
-      <div class="latter__text__email">ЭЛЕКТРОННАЯ ПОЧТА</div>
-      <button class="latter__text__btn">ПОДПИСАТЬСЯ</button>
+  <div class="latter" id="mailing">
+    <h2 class="latter__title">РАССЫЛКА</h2>
+    <div class="latter__text paragraph">БУДЬТЕ В КУРСЕ НОВОСТЕЙ ИИ НОВЫХ ВЫПУСКОВ
+      <input type="email" class="latter__text__email" placeholder="ЭЛЕКТРОННАЯ ПОЧТА"></input>
+      <button class="btn btn_bold">ПОДПИСАТЬСЯ</button>
     </div>
   </div>
 </template>
@@ -60,8 +60,10 @@ let socialMedia = [
 </script>
 
 <style scoped lang="scss">
+@use '@/assets/styles/abstracts/constants' as *;
+
 .contacts {
-  background-color: #E2EDF6;
+  background-color: $color-medium;
 }
 
 .contact {
@@ -69,28 +71,17 @@ let socialMedia = [
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
 
   &__title {
-    font-family: Bebas Neue Cyrillic, serif;
-    font-weight: 400;
-    font-size: 48px;
-    line-height: 100%;
-    letter-spacing: 0;
-    text-align: center;
-    color: #D24B35;
-    padding: 30px;
+    color: $color-additional;
+    padding: 3rem;
   }
 
   &__text {
     width: 87%;
-    font-family: Roboto, serif;
-    font-weight: 400;
-    font-size: 32px;
-    line-height: 100%;
-    letter-spacing: 0;
-    text-align: center;
-    padding-bottom: 30px;
-    color: black;
+    padding-bottom: 3rem;
+    color: $color-dark;
   }
 }
 
@@ -99,17 +90,11 @@ let socialMedia = [
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: 90px;
+  padding-bottom: 9rem;
 
   &__title {
-    font-family: Bebas Neue Cyrillic, serif;
-    font-weight: 400;
-    font-size: 48px;
-    line-height: 100%;
-    letter-spacing: 0;
-    text-align: center;
-    color: #D24B35;
-    padding: 30px;
+    color: $color-additional;
+    padding: 3rem;
   }
 
   &__links {
@@ -127,31 +112,22 @@ let socialMedia = [
   justify-content: space-around;
 
   &__img {
-    max-width: 130px;
-    max-height: 130px;
-    min-height: 130px;
-    min-width: 130px;
+    max-width: 13rem;
+    max-height: 13rem;
+    min-height: 13rem;
+    min-width: 13rem;
   }
 
   &__text {
-    font-family: Roboto, serif;
-    font-weight: 400;
-    font-size: 36px;
-    line-height: 100%;
-    letter-spacing: 0;
     text-align: center;
-    color: #000000;
-    margin-top: 20px;
+    color: $color-dark;
+    margin-top: 2rem;
   }
 }
 
 .latter {
   &__title {
-    font-family: Bebas Neue Cyrillic, serif;
-    font-weight: 400;
-    font-size: 48px;
-    line-height: 100%;
-    letter-spacing: 0;
+    padding: 3rem;
     text-align: center;
     color: #D24B35;
   }
@@ -160,30 +136,17 @@ let socialMedia = [
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 30px;
-    margin-bottom: 40px;
-    font-family: Roboto, serif;
-    font-weight: 400;
-    font-size: 32px;
-    line-height: 100%;
-    letter-spacing: 0;
-    color: #1C4478;
+    padding-bottom: 9rem;
 
     &__email {
       padding: 5px;
       margin: 0 5px 0 5px;
       color: #FFFFFF;
       background-color: #1C4478;
-    }
 
-    &__btn {
-      color: #1C4478;
-      font-family: Roboto, serif;
-      font-weight: 700;
-      font-size: 32px;
-      line-height: 100%;
-      letter-spacing: 0;
-      text-align: center;
+      &::placeholder {
+        color: #FFFFFF;
+      }
     }
   }
 }

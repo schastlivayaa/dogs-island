@@ -1,33 +1,36 @@
 <template>
   <div class="container">
     <div class="about_us">
-      <div class="about_us__header">O НАС</div>
-      <div class="about_us__mission">
-        <div class="about_us__mission__header">МИССИЯ</div>
-        <div class="about_us__mission__body">А также элементы политического процесса формируют глобальную экономическую
+      <h2 class="about_us__header">O НАС</h2>
+
+      <div class="about_us__mission" id="mission">
+        <h3 class="about_us__mission__header">МИССИЯ</h3>
+        <div class="about_us__mission__body paragraph">А также элементы политического процесса формируют глобальную экономическую
           сеть и при этом — описаны максимально подробно. Таким образом, существующая теория позволяет выполнить важные
           задания по разработке экспериментов, поражающих по своей масштабности и грандиозности. Кстати, тщательные
           исследования конкурентов неоднозначны и будут подвергнуты целой серии независимых исследований. Господа,
           убеждённость некоторых оппонентов позволяет
         </div>
       </div>
-      <div class="about_us__history">
-        <div class="about_us__history__header">ИСТОРИЯ</div>
+
+      <div class="about_us__history" id="history">
+        <h3 class="about_us__history__header">ИСТОРИЯ</h3>
         <div class="about_us__history__body">
           <img
               class="about_us__history__body__img"
                src="https://i.pinimg.com/736x/62/3c/26/623c26317f86908eafb762d391336938.jpg"
               alt="А?"
           >
-          <div class="about_us__history__body__text">А также элементы политического процесса формируют глобальную
+          <div class="about_us__history__body__text paragraph">А также элементы политического процесса формируют глобальную
             экономическую сеть и при этом — описаны максимально подробно. Таким образом, существующая теория позволяет
             выполнить важные задания по разработке экспериментов, поражающих по своей масштабности и
           </div>
         </div>
       </div>
     </div>
-    <div class="out_team">
-      <div class="out_team__header">НАША КОМАНДА</div>
+
+    <div class="out_team" id="team">
+      <h3 class="out_team__header">НАША КОМАНДА</h3>
       <div class="out_team__members">
         <div class="card" v-for="teammate in team" :key="teammate.id">
           <div class="card__body__case">
@@ -38,19 +41,21 @@
         </div>
       </div>
     </div>
+
     <div class="photo">
-      <div class="photo__dogs">
-        <div class="photo__dogs__header">ФОТОСЪЁМКА СОБАК</div>
-        <div class="photo__dogs__text">А также элементы политического процесса формируют глобальную экономическую сеть
+      <div class="photo__dogs" id="photoshoot">
+        <h3 class="photo__dogs__header">ФОТОСЪЁМКА СОБАК</h3>
+        <div class="photo__dogs__text paragraph">А также элементы политического процесса формируют глобальную экономическую сеть
           и при этом — описаны максимально подробно. Таким образом, существующая теория позволяет выполнить важные
           задания по разработке экспериментов, поражающих по своей масштабности и грандиозности. Кстати, тщательные
           исследования конкурентов неоднозначны и будут подвергнуты целой серии независимых исследований. Господа,
           убеждённость некоторых оппонентов позволяет
         </div>
       </div>
-      <div class="photo__school">
-        <div class="photo__school__header">ФОТОШКОЛА</div>
-        <div class="photo__school__text">А также элементы политического процесса формируют глобальную экономическую
+      
+      <div class="photo__school" id="photoschool">
+        <h3 class="photo__school__header">ФОТОШКОЛА</h3>
+        <div class="photo__school__text paragraph">А также элементы политического процесса формируют глобальную экономическую
           сеть и при этом — описаны максимально подробно. Таким образом, существующая теория позволяет выполнить
           важные задания по разработке экспериментов, поражающих по своей масштабности и грандиозности. Кстати,
           тщательные исследования конкурентов неоднозначны и будут подвергнуты целой серии независимых исследований.
@@ -104,89 +109,69 @@ let team = [
 </script>
 
 <style scoped lang="scss">
+@use '@/assets/styles/abstracts/constants' as *;
+
 .container {
 
 }
 
 .about_us {
-  background-color: #E2EDF6;
+  background-color: $color-medium;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
   &__header {
-    color: black;
-    font-family: Bebas Neue Cyrillic, serif;
-    font-size: 48px;
-    font-weight: 400;
-    line-height: 100%;
-    margin: 30px 0 80px 0;
+    padding: 3rem 0 8rem 0;
+    color: $color-dark;
+    text-align: center;
   }
 
   &__mission {
-    background-color: white;
+    background-color: #fff;
     width: 90%;
     display: flex;
     flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+    padding: 3rem;
 
     &__header {
-      color: #D24B35;
-      font-family: Bebas Neue Cyrillic, serif;
-      font-weight: 400;
-      font-size: 48px;
-      line-height: 100%;
-      letter-spacing: 0;
-      text-align: center;
-      margin-top: 20px;
+      color: $color-additional;
+      font-size: 4.8rem;
     }
 
     &__body {
-      color: black;
-      font-family: Roboto, serif;
-      font-weight: 400;
-      font-size: 32px;
-      line-height: 100%;
-      letter-spacing: -1px;
-      text-align: center;
-      padding: 20px;
+      color: $color-dark;
     }
   }
 
   &__history {
     margin-top: 80px;
     width: 90%;
+    text-align: center;
 
     &__header {
-      color: #D24B35;
-      font-family: Bebas Neue Cyrillic, serif;
-      font-weight: 400;
-      font-size: 48px;
-      line-height: 100%;
-      letter-spacing: 0;
-      text-align: center;
+      color: $color-additional;
+      font-size: 4.8rem;
     }
 
     &__body {
       display: flex;
-      padding: 20px;
-      margin-bottom: 80px;
+      padding: 2rem;
+      margin-bottom: 8rem;
 
       &__img {
         min-width: 720px;
         max-height: 231px;
         object-fit: cover;
-        object-position: top;;
+        object-position: top;
       }
 
       &__text {
         padding: 10px;
-        color: black;
-        font-family: Roboto, serif;
-        font-weight: 400;
-        font-size: 32px;
-        line-height: 100%;
-        letter-spacing: 0;
+        color: $color-dark;
         text-align: start;
         margin-left: 15px;
       }
@@ -195,19 +180,15 @@ let team = [
 }
 
 .out_team {
-  background-color: white;
+  background-color: $color-light;
   display: flex;
   flex-direction: column;
 
   &__header {
-    font-family: Bebas Neue Cyrillic, serif;
-    font-weight: 400;
-    font-size: 48px;
-    line-height: 100%;
+    font-size: 4.8rem;
     text-align: center;
-    color: #D24B35;
+    color: $color-additional;
     padding-top: 30px;
-    letter-spacing: -1px;
     margin-bottom: 20px
   }
 
@@ -248,8 +229,6 @@ let team = [
       font-family: Bebas Neue Cyrillic, serif;
       font-weight: 400;
       font-size: 48px;
-      line-height: 100%;
-      letter-spacing: 0;
       text-align: center;
       overflow-wrap: break-word;
     }
@@ -259,11 +238,7 @@ let team = [
       justify-content: center;
       align-items: center;
       padding: 10px;
-      font-family: Roboto, serif;
-      font-weight: 400;
-      font-size: 32px;
-      line-height: 100%;
-      letter-spacing: 0;
+      font-size: 3.2rem;
       text-align: center;
       overflow-wrap: break-word;
     }
@@ -271,70 +246,49 @@ let team = [
 }
 
 .photo {
-  background-color: #D9D9D9;
+  background-color: $color-medium;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  text-align: center;
 
   &__dogs{
-    background-color: white;
+    background-color: #fff;
     width: 90%;
 
     &__header {
-      font-family: Bebas Neue Cyrillic,serif;
-      font-weight: 400;
-      font-size: 48px;
-      line-height: 100%;
-      letter-spacing: 0;
-      text-align: center;
-      padding: 15px;
-      color: #D24B35;
+      font-size: 4.8rem;
+      padding: 1.5rem;
+      color: $color-additional;
     }
 
     &__text{
-      font-family: Roboto,serif;
-      font-weight: 400;
-      font-size: 32px;
-      line-height: 100%;
-      letter-spacing: 0;
       text-align: center;
-      padding: 15px;
-      margin-bottom: 15px;
-      color: black;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: $color-dark;
     }
   }
 
   &__school{
-    background-color: white;
+    background-color: #fff;
     width: 90%;
-    margin-top: 80px;
+    margin-top: 8rem;
+
     &__header {
-      font-family: Bebas Neue Cyrillic,serif;
-      font-weight: 400;
-      font-size: 48px;
-      line-height: 100%;
-      letter-spacing: 0;
-      text-align: center;
-      padding: 15px;
-      color: #D24B35;
-
-
+      font-size: 4.8rem;
+      padding: 1.5rem;
+      color: $color-additional;
     }
 
     &__text{
-      font-family: Roboto,serif;
-      font-weight: 400;
-      font-size: 32px;
-      line-height: 100%;
-      letter-spacing: 0;
       text-align: center;
-      color: black;
-      padding: 15px;
-      margin-bottom: 15px;
-
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: $color-dark;
     }
   }
 }

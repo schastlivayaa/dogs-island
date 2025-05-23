@@ -70,8 +70,13 @@ const routes = [
 export const router = createRouter({
   history: createWebHistory(),
   routes,
-  scrollBehavior() {
-    // Включаем прокрутку вверх при переходе
-    return { top: 0 }
+  scrollBehavior(to, from, savedPosition) {
+    if (to.hash) {
+      return {
+        el: to.hash,
+        behavior: 'smooth',
+      }
+    } 
+    return savedPosition || { top: 0 }
   }
 })

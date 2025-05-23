@@ -35,7 +35,7 @@
                                 <RouterLink
                                   :to="item.path"
                                   class="header__nav-link"
-                                  :class="{ 'header__nav-link--active': menu.activePath === item.path }"
+                                  :class="{ 'header__nav-link--active': isActive(item.path) }"
                                   @click="select(item.path)"
                                 >
                                     {{ item.title }}
@@ -62,7 +62,7 @@
                                     <RouterLink
                                       :to="child.path"
                                       class="header__dropdown-link"
-                                      :class="{ 'header__dropdown-link--active': menu.activePath === child.path }"
+                                      :class="{ 'header__dropdown-link--active': isActive(item.path) }"
                                       @click="select(child.path)"
                                     >
                                         {{ child.title }}
@@ -88,34 +88,55 @@
 
 <script setup>
 import { ref, watch } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 import { useMenuStore } from '@/stores/menuStore'
 
 const menu = useMenuStore()
 const dropdown = ref(null)
 const mobileOpen = ref(false)
+const route = useRoute()
+const router = useRouter()
 
 watch(mobileOpen, (isOpen) => {
   document.body.classList.toggle('no-scroll', isOpen)
 })
 
+// Функция для сравнения путей с учетом query и hash
+function isActive(path) {
+  return path === route.fullPath
+}
+
+// Открытие дропдауна при наведении (только на десктопе)
 function openDropdown(path) {
-  dropdown.value = path
+  if (!mobileOpen.value) dropdown.value = path
 }
 
+// Закрытие дропдауна
 function closeDropdown() {
-  dropdown.value = null
+  if (!mobileOpen.value) dropdown.value = null
 }
 
-function select(path) {
+// function select(path) {
+//   menu.setActive(path)
+//   dropdown.value = null
+//   if (mobileOpen.value) mobileOpen.value = false
+// }
+
+// Выбор пункта меню — закрываем меню и дропдаун, ставим активный путь
+async function select(path) {
+  // Навигация с учетом полного пути
+  await router.push(path)
   menu.setActive(path)
   dropdown.value = null
   if (mobileOpen.value) mobileOpen.value = false
 }
 
+// Тоггл дропдауна для мобилки
 function toggleDropdown(path) {
   dropdown.value = dropdown.value === path ? null : path
 }
 
+// Тоггл мобильного меню
 function toggleMobileMenu() {
   mobileOpen.value = !mobileOpen.value
   if (!mobileOpen.value) dropdown.value = null

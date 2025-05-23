@@ -5,6 +5,7 @@
     <TagsFilter
       :tags="tags"
       v-model="selectedTag"
+      @update:model-value="selectTag"
     />
   </div>
 
@@ -17,6 +18,8 @@
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
+
 import TagsFilter from '@/components/TagFilter.vue'
 import ArticleList from '@/components/ArticleList.vue'
 import tags from '@/assets/data/tags_articles.json'
@@ -24,15 +27,19 @@ import allArts from '@/assets/data/articles.json'
 
 // реактивные состояния
 const allArticles   = ref([])
-const selectedTag   = ref(null)
 const pageSize      = 12
 const currentPage   = ref(1)
+// роутинг
+const route = useRoute()
+const router = useRouter()
 
 onMounted(() => {
-  // загружаем все статьи из JSON
   allArticles.value = structuredClone(allArts)
 })
-// отфильтрованный массив
+
+const selectedTag = computed(() => route.query.tag || null)
+
+// отфильтрованные статьи
 const filtered = computed(() =>
   selectedTag.value
     ? allArticles.value.filter(a => a.tags.includes(selectedTag.value))
@@ -55,8 +62,10 @@ function loadMore() {
 }
 
 function selectTag(slug) {
-  // сбросить на тот же клик, иначе выбрать новый
-  selectedTag.value = selectedTag.value === slug ? null : slug
+  const next = slug === selectedTag.value ? null : slug
+  router.push({
+    query: { ...route.query, tag: next || undefined },
+  })
   currentPage.value = 1
 }
 </script>
